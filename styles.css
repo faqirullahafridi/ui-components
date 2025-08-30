@@ -1,0 +1,1335 @@
+/* UI Components Library Styles */
+
+/* Base Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.leading-relaxed {
+    line-height: 1.7;
+}
+
+/* Text Contrast Improvements */
+.text-gray-300 {
+    color: #d1d5db !important;
+}
+
+.text-gray-400 {
+    color: #9ca3af !important;
+}
+
+.text-gray-500 {
+    color: #6b7280 !important;
+}
+
+/* Sidebar Styles */
+.category-btn {
+    color: #f3f4f6 !important;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+}
+
+.category-btn.active {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
+
+.category-btn:hover:not(.active) {
+    background-color: #374151;
+    color: #93c5fd;
+}
+
+/* Component Card Styling */
+.card-header {
+    background: linear-gradient(to right, #374151, #4b5563);
+}
+
+/* Button Transitions */
+.show-code-btn, .copy-code-btn, .copy-all-btn {
+    transition: all 0.2s ease;
+}
+
+/* Search Placeholder */
+.placeholder-gray-400::placeholder {
+    color: #9ca3af !important;
+    opacity: 1;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-trigger, .modal-close {
+    cursor: pointer;
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+}
+
+/* Component Form Styles */
+.component-form {
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+.component-form input,
+.component-form textarea,
+.component-form select {
+    background: rgba(55, 65, 81, 0.8);
+    border: 1px solid rgba(75, 85, 99, 0.5);
+    color: white;
+}
+
+.component-form input:focus,
+.component-form textarea:focus,
+.component-form select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10000;
+    background: #10b981;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #3b82f6;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+    /* Small mobile devices */
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .preview-area {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Component preview wrapper for mobile */
+    .component-preview-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Stack buttons vertically on very small screens */
+    .flex.flex-col.sm\\:flex-row {
+        flex-direction: column;
+    }
+    
+    .space-y-2.sm\\:space-y-0 {
+        margin-top: 0.5rem;
+    }
+    
+    /* Adjust text sizes for mobile */
+    .text-lg.sm\\:text-xl {
+        font-size: 1.125rem;
+    }
+    
+    .text-base.sm\\:text-lg {
+        font-size: 1rem;
+    }
+    
+    /* Optimize spacing for mobile */
+    .p-4.sm\\:p-6 {
+        padding: 1rem;
+    }
+    
+    .mb-6.sm\\:mb-8 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Medium mobile devices */
+    /* Component preview wrapper for medium mobile */
+    .component-preview-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Adjust modal padding */
+    .component-form {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    /* Optimize button text for mobile */
+    .hidden.sm\\:inline {
+        display: none;
+    }
+    
+    .sm\\:hidden {
+        display: inline;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Tablet devices */
+    /* Component preview wrapper for tablets */
+    .component-preview-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Ensure sidebar doesn't interfere with main content */
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Desktop devices */
+    /* Component preview wrapper for desktop */
+    .component-preview-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Restore sidebar layout */
+    .main-content {
+        margin-left: 16rem; /* 64 * 0.25rem = 16rem */
+    }
+}
+
+/* Touch-friendly mobile optimizations */
+@media (max-width: 1024px) {
+    /* Increase touch targets */
+    button, .category-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Optimize scrolling for mobile */
+    .overflow-y-auto {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Improve mobile form inputs */
+    input, select, textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Mobile-friendly spacing */
+    .space-y-2 > * + * {
+        margin-top: 0.5rem;
+    }
+    
+    .space-y-3 > * + * {
+        margin-top: 0.75rem;
+    }
+    
+    .space-y-4 > * + * {
+        margin-top: 1rem;
+    }
+    
+    /* Mobile component preview touch optimizations */
+    .component-preview-wrapper {
+        touch-action: manipulation;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    /* Ensure components are properly centered on mobile */
+    .preview-area {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* Landscape mobile optimizations */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .preview-area {
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+    
+    .component-form {
+        max-height: 80vh;
+    }
+    
+    /* Landscape component preview optimizations */
+    .component-preview-wrapper {
+        min-height: 80px !important;
+    }
+    
+    .component-preview-wrapper > div {
+        min-height: 60px !important;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark mode support for mobile */
+@media (prefers-color-scheme: dark) {
+    .component-form {
+        background: rgba(31, 41, 55, 0.98);
+    }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 1024px) {
+    /* Ensure sufficient contrast */
+    .text-gray-200 {
+        color: #e5e7eb !important;
+    }
+    
+    .text-gray-300 {
+        color: #d1d5db !important;
+    }
+    
+    /* Improve focus states for mobile */
+    button:focus, input:focus, select:focus, textarea:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+    }
+    
+    /* Header text optimization for small screens */
+    .navbar h1 {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    /* Ensure navbar content doesn't overflow */
+    .navbar > div {
+        min-width: 0;
+        flex: 1;
+    }
+    
+    .navbar .flex-shrink-0 {
+        flex-shrink: 0;
+    }
+}
+
+/* Mobile-specific component optimizations - maintain desktop appearance */
+@media (max-width: 1024px) {
+    /* All components maintain exact desktop sizing and appearance */
+    .quantum-dna, .neural-matrix, .holographic-terminal,
+    .quantum-portal, .neural-hologram, .ai-brain-interface,
+    .quantum-circuit, .neural-node, .holographic-card, .quantum-toggle,
+    .data-stream, .ai-chat, .holographic-btn, .quantum-progress,
+    .neural-dashboard, .particle-system {
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        font-size: inherit !important;
+    }
+    
+    /* Keep original font sizes - no mobile scaling */
+    .futuristic {
+        font-size: inherit;
+    }
+    
+    .futuristic .text-2xl {
+        font-size: inherit;
+    }
+    
+    .futuristic .text-lg {
+        font-size: inherit;
+    }
+    
+    /* Maintain original animation speeds */
+    .animate-spin, .animate-pulse {
+        animation-duration: inherit;
+    }
+    
+    /* Keep original animation durations */
+    .dna-helix {
+        animation-duration: inherit;
+    }
+    
+    .portal-ring .outer-ring {
+        animation-duration: inherit;
+    }
+    
+    .portal-ring .inner-ring {
+        animation-duration: inherit;
+    }
+    
+    .portal-ring .core-ring {
+        animation-duration: inherit;
+    }
+    
+    .hologram-cube {
+        animation-duration: inherit;
+    }
+}
+
+/* Ultra-small mobile devices - maintain desktop appearance */
+@media (max-width: 375px) {
+    /* Component preview wrapper - keep desktop sizing */
+    .component-preview-wrapper {
+        width: 100%;
+        overflow: hidden;
+        min-height: 80px !important;
+    }
+    
+    .component-preview-wrapper > div {
+        min-height: 60px !important;
+    }
+    
+    .card-header {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .p-4.sm\\:p-6 {
+        padding: 0.75rem;
+    }
+    
+    /* Keep original text sizes */
+    .text-lg.sm\\:text-xl {
+        font-size: inherit;
+    }
+    
+    .text-base.sm\\:text-lg {
+        font-size: inherit;
+    }
+    
+    /* Additional overflow fixes for very small screens */
+    .neural-dashboard .metric-card {
+        padding: 0.5rem !important;
+        margin: 0.25rem !important;
+    }
+    
+    .holographic-terminal .terminal-content {
+        font-size: 0.625rem !important;
+        line-height: 0.875rem !important;
+    }
+    
+    .quantum-portal .portal-ring {
+        width: 70% !important;
+        max-width: 150px !important;
+    }
+    
+    .neural-matrix .matrix-grid {
+        gap: 0.125rem !important;
+        padding: 0.75rem !important;
+    }
+    
+    .neural-matrix .matrix-node {
+        width: 0.375rem !important;
+        height: 0.375rem !important;
+    }
+    
+    /* Ultra-small mobile component adjustments */
+    .neural-dashboard,
+    .holographic-terminal,
+    .quantum-portal,
+    .neural-hologram,
+    .quantum-circuit,
+    .holographic-scanner,
+    .neural-synapse,
+    .quantum-dna,
+    .neural-matrix,
+    .particle-system,
+    .ai-brain-interface {
+        min-height: 60px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* Mobile performance optimizations - maintain desktop appearance */
+@media (max-width: 1024px) {
+    /* Keep original box shadows for consistent appearance */
+    .shadow-lg, .shadow-xl {
+        box-shadow: inherit;
+    }
+    
+    /* Keep original backdrop filters */
+    .backdrop-blur-sm, .backdrop-blur-md, .backdrop-blur-lg, .backdrop-blur-xl {
+        backdrop-filter: inherit;
+        -webkit-backdrop-filter: inherit;
+    }
+    
+    /* Keep original gradients */
+    .bg-gradient-to-br, .bg-gradient-to-r, .bg-gradient-to-b {
+        background: inherit;
+    }
+    
+    /* Mobile component preview optimizations */
+    .component-preview-wrapper {
+        min-height: 100px !important;
+    }
+    
+    .component-preview-wrapper > div {
+        min-height: 80px !important;
+    }
+    
+    /* Ensure components don't overflow on mobile */
+    .preview-area {
+        overflow: hidden !important;
+        position: relative !important;
+    }
+    
+    /* Mobile-specific component adjustments */
+    .neural-dashboard,
+    .holographic-terminal,
+    .quantum-portal,
+    .neural-hologram,
+    .quantum-circuit,
+    .holographic-scanner,
+    .neural-synapse,
+    .quantum-dna,
+    .neural-matrix,
+    .particle-system,
+    .ai-brain-interface {
+        min-height: 80px !important;
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 1024px) {
+    /* Ensure sufficient contrast */
+    .text-gray-200 {
+        color: #e5e7eb !important;
+    }
+    
+    .text-gray-300 {
+        color: #d1d5db !important;
+    }
+    
+    /* Improve focus states for mobile */
+    button:focus, input:focus, select:focus, textarea:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+    }
+    
+    /* Header text optimization for small screens */
+    .navbar h1 {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    /* Ensure navbar content doesn't overflow */
+    .navbar > div {
+        min-width: 0;
+        flex: 1;
+    }
+    
+    .navbar .flex-shrink-0 {
+        flex-shrink: 0;
+    }
+}
+
+/* Global component sizing - ensure proper display on all devices */
+.component-preview-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    overflow: hidden !important;
+    position: relative !important;
+    min-height: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.component-preview-wrapper > div {
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    font-size: inherit !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Big component preview optimization */
+.component-preview-wrapper > div[class*="neural"],
+.component-preview-wrapper > div[class*="holographic"],
+.component-preview-wrapper > div[class*="quantum"],
+.component-preview-wrapper > div[class*="ai"],
+.component-preview-wrapper > div[class*="particle"] {
+    transform: scale(0.9) !important;
+    transform-origin: center center !important;
+    max-width: 90% !important;
+    max-height: 90% !important;
+}
+
+/* Ensure all futuristic components maintain desktop appearance and fit in cards */
+.quantum-dna, .neural-matrix, .holographic-terminal,
+.quantum-portal, .neural-hologram, .ai-brain-interface,
+.quantum-circuit, .holographic-scanner, .neural-synapse,
+.neural-node, .holographic-card, .quantum-toggle,
+.data-stream, .ai-chat, .holographic-btn, .quantum-progress,
+.neural-dashboard, .particle-system {
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    font-size: inherit !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+}
+
+/* Big component specific optimizations */
+.neural-dashboard,
+.holographic-terminal,
+.quantum-portal,
+.neural-matrix,
+.particle-system {
+    min-height: 140px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+}
+
+/* Mobile-specific component sizing */
+@media (max-width: 768px) {
+    .quantum-dna, .neural-matrix, .holographic-terminal,
+    .quantum-portal, .neural-hologram, .ai-brain-interface,
+    .quantum-circuit, .holographic-scanner, .neural-synapse,
+    .neural-node, .holographic-card, .quantum-toggle,
+    .data-stream, .ai-chat, .holographic-btn, .quantum-progress,
+    .neural-dashboard, .particle-system {
+        min-height: 100px !important;
+        font-size: 0.875rem !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .quantum-dna, .neural-matrix, .holographic-terminal,
+    .quantum-portal, .neural-hologram, .ai-brain-interface,
+    .quantum-circuit, .holographic-scanner, .neural-synapse,
+    .neural-node, .holographic-card, .quantum-toggle,
+    .data-stream, .ai-chat, .holographic-btn, .quantum-progress,
+    .neural-dashboard, .particle-system {
+        min-height: 80px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* Component overflow fixes - ensure everything fits in cards */
+.neural-dashboard {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    min-height: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.neural-dashboard .metric-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+}
+
+.neural-dashboard .metric-value {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+.neural-dashboard .metric-label {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Fix other commonly overflowing components */
+.holographic-terminal {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    font-size: 0.75rem !important;
+    min-height: 120px !important;
+    position: relative !important;
+}
+
+.holographic-terminal .terminal-content {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    position: relative !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+}
+
+.holographic-terminal .terminal-header {
+    font-size: 0.75rem !important;
+    position: relative !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Fix quantum portal sizing and text positioning */
+.quantum-portal {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    min-height: 120px !important;
+    position: relative !important;
+}
+
+.quantum-portal .portal-ring {
+    width: 80% !important;
+    height: auto !important;
+    max-width: 200px !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Remove quantum portal text overlay */
+
+/* Fix neural matrix sizing */
+.neural-matrix {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.neural-matrix .matrix-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0.25rem !important;
+    padding: 1rem !important;
+}
+
+.neural-matrix .matrix-node {
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+}
+
+/* Fix AI brain interface sizing and text positioning */
+.ai-brain-interface {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    min-height: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.ai-brain-interface .brain-visualization {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+}
+
+.ai-brain-interface .interface-display {
+    width: 6rem !important;
+    height: 4rem !important;
+    font-size: 0.625rem !important;
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+/* Remove all overlay text positioning */
+
+/* Fix quantum circuit sizing */
+.quantum-circuit {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.quantum-circuit .circuit-path {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Fix holographic scanner sizing */
+.holographic-scanner {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.holographic-scanner .holographic-display {
+    width: 6rem !important;
+    height: 4rem !important;
+    font-size: 0.625rem !important;
+}
+
+/* Fix neural synapse sizing */
+.neural-synapse {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.neural-synapse .synapse-connection {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Fix quantum DNA helix sizing */
+.quantum-dna {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.quantum-dna .dna-helix {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.quantum-dna .dna-strand {
+    height: 6rem !important;
+}
+
+/* Fix neural hologram sizing */
+.neural-hologram {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.neural-hologram .hologram-cube {
+    width: 4rem !important;
+    height: 4rem !important;
+}
+
+/* Fix quantum waveform sizing */
+.quantum-waveform {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.quantum-waveform svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Fix particle system sizing */
+.particle-system {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.particle-system .particles {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Ensure preview area doesn't overflow */
+.preview-area {
+    overflow: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+    min-height: 120px !important;
+}
+
+/* Big component preview area optimization */
+.preview-area:has([class*="neural"]),
+.preview-area:has([class*="holographic"]),
+.preview-area:has([class*="quantum"]),
+.preview-area:has([class*="ai"]),
+.preview-area:has([class*="particle"]) {
+    min-height: 150px !important;
+    padding: 1rem !important;
+}
+
+/* Simple mobile preview fix */
+@media (max-width: 768px) {
+    .preview-area {
+        min-height: 100px !important;
+        padding: 0.75rem !important;
+    }
+    
+    .component-preview-wrapper {
+        min-height: 80px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .component-preview-wrapper > div {
+        min-height: 60px !important;
+        max-width: 90% !important;
+    }
+    
+    /* Big component mobile scaling */
+    .component-preview-wrapper > div[class*="neural"],
+    .component-preview-wrapper > div[class*="holographic"],
+    .component-preview-wrapper > div[class*="quantum"],
+    .component-preview-wrapper > div[class*="ai"],
+    .component-preview-wrapper > div[class*="particle"] {
+        transform: scale(0.8) !important;
+        max-width: 85% !important;
+        max-height: 85% !important;
+    }
+    
+    /* Big component mobile preview area */
+    .preview-area:has([class*="neural"]),
+    .preview-area:has([class*="holographic"]),
+    .preview-area:has([class*="quantum"]),
+    .preview-area:has([class*="ai"]),
+    .preview-area:has([class*="particle"]) {
+        min-height: 120px !important;
+        padding: 0.75rem !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .preview-area {
+        min-height: 80px !important;
+        padding: 0.5rem !important;
+    }
+    
+    .component-preview-wrapper {
+        min-height: 60px !important;
+    }
+    
+    .component-preview-wrapper > div {
+        min-height: 50px !important;
+        max-width: 85% !important;
+    }
+    
+    /* Ultra-small mobile big component scaling */
+    .component-preview-wrapper > div[class*="neural"],
+    .component-preview-wrapper > div[class*="holographic"],
+    .component-preview-wrapper > div[class*="quantum"],
+    .component-preview-wrapper > div[class*="ai"],
+    .component-preview-wrapper > div[class*="particle"] {
+        transform: scale(0.7) !important;
+        max-width: 80% !important;
+        max-height: 80% !important;
+    }
+    
+    /* Ultra-small mobile big component preview area */
+    .preview-area:has([class*="neural"]),
+    .preview-area:has([class*="holographic"]),
+    .preview-area:has([class*="quantum"]),
+    .preview-area:has([class*="ai"]),
+    .preview-area:has([class*="particle"]) {
+        min-height: 100px !important;
+        padding: 0.5rem !important;
+    }
+}
+
+/* Remove duplicate mobile preview optimizations */
+
+.preview-area > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Remove all text overlay styling */
+
+/* Demo overlay styles */
+.demo-overlay {
+    backdrop-filter: blur(8px) !important;
+}
+
+.demo-overlay .bg-gray-800 {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+
+.component-demo-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 200px !important;
+    position: relative !important;
+}
+
+.component-demo-wrapper > * {
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+}
+
+/* Ensure demo components are properly sized */
+.component-demo-wrapper .neural-dashboard,
+.component-demo-wrapper .holographic-terminal,
+.component-demo-wrapper .quantum-portal,
+.component-demo-wrapper .neural-hologram,
+.component-demo-wrapper .quantum-circuit,
+.component-demo-wrapper .holographic-scanner,
+.component-demo-wrapper .neural-synapse,
+.component-demo-wrapper .quantum-dna,
+.component-demo-wrapper .neural-matrix,
+.component-demo-wrapper .particle-system,
+.component-demo-wrapper .ai-brain-interface {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 120px !important;
+    transform: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Remove demo text overlay styling */
+
+/* Dark Mode Enhancements */
+.dark {
+    color-scheme: dark;
+}
+
+/* Card container overflow fixes */
+.bg-gray-800.border.border-gray-700.rounded-xl {
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.preview-area.bg-gray-700.rounded-lg {
+    overflow: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+}
+
+/* Ensure all component cards handle overflow properly */
+[id*="components-grid"] > div {
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Mobile card optimizations */
+@media (max-width: 768px) {
+    .bg-gray-800.border.border-gray-700.rounded-xl {
+        margin: 0.5rem !important;
+        padding: 0.75rem !important;
+    }
+    
+    .preview-area.bg-gray-700.rounded-lg {
+        margin-bottom: 0.75rem !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .bg-gray-800.border.border-gray-700.rounded-xl {
+        margin: 0.25rem !important;
+        padding: 0.5rem !important;
+    }
+    
+    .preview-area.bg-gray-700.rounded-lg {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Demo Overlay Styles */
+.demo-overlay {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.demo-content {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Demo content dark theme enhancements */
+.demo-content input,
+.demo-content textarea,
+.demo-content select {
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #ffffff !important;
+}
+
+.demo-content input:focus,
+.demo-content textarea:focus,
+.demo-content select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.demo-content button {
+    transition: all 0.2s ease;
+}
+
+.demo-content button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.demo-content .card,
+.demo-content [class*="card"] {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.demo-content .card:hover,
+.demo-content [class*="card"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.close-demo {
+    transition: all 0.2s ease;
+}
+
+.close-demo:hover {
+    transform: scale(1.1);
+}
+
+/* Enhanced Component Interactions */
+.component-card {
+    position: relative;
+}
+
+.component-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.component-card:hover::after {
+    opacity: 1;
+}
+
+/* Futuristic Component Enhancements */
+.futuristic {
+    position: relative;
+    overflow: hidden;
+}
+
+.futuristic::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(103, 232, 249, 0.1), transparent, rgba(139, 92, 246, 0.1), transparent);
+    animation: rotate 10s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Neural Network Node Enhancements */
+.neural-node {
+    filter: drop-shadow(0 0 20px rgba(103, 232, 249, 0.3));
+}
+
+.neural-node:hover {
+    filter: drop-shadow(0 0 40px rgba(103, 232, 249, 0.6));
+}
+
+/* Holographic Card Enhancements */
+.holographic-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.holographic-card:hover {
+    box-shadow: 0 25px 50px rgba(103, 232, 249, 0.2);
+}
+
+/* Quantum Toggle Enhancements */
+.quantum-toggle {
+    filter: drop-shadow(0 0 15px rgba(103, 232, 249, 0.2));
+}
+
+.quantum-toggle:hover {
+    filter: drop-shadow(0 0 25px rgba(103, 232, 249, 0.4));
+}
+
+/* Data Stream Enhancements */
+.data-stream {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.stream-line {
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* AI Chat Enhancements */
+.ai-chat {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.ai-chat input:focus {
+    box-shadow: 0 0 20px rgba(103, 232, 249, 0.3);
+}
+
+/* Holographic Button Enhancements */
+.holographic-btn {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.holographic-btn:hover {
+    filter: drop-shadow(0 0 30px rgba(103, 232, 249, 0.5));
+}
+
+/* Quantum Progress Enhancements */
+.quantum-progress {
+    filter: drop-shadow(0 0 25px rgba(103, 232, 249, 0.4));
+}
+
+.quantum-particles .particle {
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Neural Dashboard Enhancements */
+.neural-dashboard {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.metric-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Particle System Enhancements */
+.particle-system {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.particle {
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.connection-line {
+    filter: drop-shadow(0 0 5px rgba(103, 232, 249, 0.5));
+}

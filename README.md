@@ -17,7 +17,7 @@ A modern, responsive, and feature-rich collection of UI components built with HT
 - **Component Management** - Add, edit, and organize components
 
 ### 📱 **Mobile Optimized**
-- **Touch-Friendly** - Optimized for mobile devices and tablets
+- **Touch-Friendly** - Optimized for mobile devices and tabletsf
 - **Responsive Breakpoints** - Perfect display on all screen sizes
 - **Mobile Menu** - Slide-out sidebar with touch gestures
 - **Performance Optimized** - Fast loading and smooth interactions

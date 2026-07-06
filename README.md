@@ -309,4 +309,4 @@ Ready to get started? Open `ui-components-library.html` in your browser and star
 
 ---
 
-*Built with ❤️ for the modern web*
+*Built with ❤️ for the modern web*d
